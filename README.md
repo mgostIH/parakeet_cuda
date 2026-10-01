@@ -3,7 +3,8 @@
 Speech transcription and speaker diarization with bounded GPU memory,
 built around ordinary FP32 CUDA kernels and cuBLAS. Developed on a **GTX
 750 Ti with 2 GiB VRAM**: measured process usage was **280 MiB for ASR** and
-**384 MiB for ASR plus diarization**, including driver/library overhead.
+**384 MiB for ASR plus diarization**, including driver/library overhead. 
+Speed is roughly **20x real time** for speech processing.
 
 This is an experimental independent runtime for NVIDIA's Parakeet TDT 0.6B
 v3 and Nemotron 3 Diarization GGUF models. The source is Apache-2.0.
