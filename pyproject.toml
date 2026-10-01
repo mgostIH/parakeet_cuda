@@ -1,0 +1,30 @@
+[project]
+name = "parakeet-cuda"
+version = "0.1.0"
+description = "Bounded-memory CUDA Parakeet transcription and Nemotron speaker diarization"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md", "licenses/*.txt"]
+dependencies = ["numpy==2.5.3"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Topic :: Multimedia :: Sound/Audio :: Speech",
+]
+
+[project.scripts]
+parakeet = "parakeet_cuda.__main__:main"
+parakeet-download = "parakeet_cuda.download:main"
+parakeet-build = "parakeet_cuda.compiler:main"
+
+[build-system]
+requires = ["uv_build>=0.8,<0.9"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "parakeet_cuda"
+module-root = ""
+source-include = ["tests/**", "analysis/*.py", "analysis/*.md", "analysis/gguf_inventory.txt", "analysis/diar_oracle/**", "workloads/**", "kernels/**", "docs/**", "scripts/**", "transcribe*.sh", "uv.lock", "CONTRIBUTING.md", "AGENTS.md", ".github/workflows/**", ".gitignore"]
+source-exclude = ["REIMPLEMENTATION_PLAN.md", "**/__pycache__/**", "**/*.pyc", "**/*.wav", "**/*.m4a", "**/*.mp3", "**/*.gguf", "**/*.nemo", "**/*.safetensors"]

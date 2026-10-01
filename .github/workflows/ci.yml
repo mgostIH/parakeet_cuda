@@ -1,0 +1,21 @@
+name: checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  cpu-and-package:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+      - run: uv python install ${{ matrix.python-version }}
+      - run: uv sync --locked --python ${{ matrix.python-version }}
+      - run: uv run --no-sync python -m unittest discover -s tests -v
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+      - run: uv run --no-sync parakeet --help
+      - run: uv build
+      - run: python3 scripts/check_release.py dist/*.whl dist/*.tar.gz

@@ -1,0 +1,198 @@
+GGUF v3: 701 tensors, 47 metadata entries
+Tensor data starts at byte 167296
+
+Metadata:
+  general.architecture: asr
+  general.name: parakeet-tdt-0.6b-v3.oss-align.q8_0
+  asr.head_type: tdt
+  general.file_type: 7
+  asr.encoder.d_model: 1024
+  asr.encoder.n_layers: 24
+  asr.encoder.n_heads: 8
+  asr.encoder.d_ff: 4096
+  asr.encoder.conv_kernel_size: 9
+  asr.encoder.subsampling_factor: 8
+  asr.encoder.subsampling_conv_channels: 256
+  asr.encoder.feat_in: 128
+  asr.encoder.xscaling: False
+  asr.encoder.use_bias: False
+  asr.encoder.q8_layout: block_q8_0
+  asr.encoder.qkv_q8_layout: block_q8_0
+  asr.encoder.pos_emb_max_len: 5000
+  asr.encoder.cache_supported: False
+  asr.encoder.train_left_ctx: 0
+  asr.encoder.train_right_ctx: 0
+  asr.encoder.offline_left_ctx: -1
+  asr.encoder.offline_right_ctx: -1
+  asr.encoder.conv_norm: batch_norm
+  asr.encoder.conv_context: None
+  asr.encoder.att_context_style: regular
+  asr.preprocessor.sample_rate: 16000
+  asr.preprocessor.window_size: 0.02500000037252903
+  asr.preprocessor.window_stride: 0.009999999776482582
+  asr.preprocessor.n_fft: 512
+  asr.preprocessor.features: 128
+  asr.preprocessor.normalize: per_feature
+  asr.preprocessor.preemph: 0.9700000286102295
+  asr.preprocessor.dither: 9.999999747378752e-06
+  asr.preprocessor.stft_center_window: True
+  asr.preprocessor.hann_periodic: False
+  asr.preprocessor.mask_invalid_frames: True
+  asr.rnnt.vocab_size: 8193
+  asr.rnnt.blank_id: 8192
+  asr.rnnt.pred_embed_dim: 640
+  asr.rnnt.pred_hidden: 640
+  asr.rnnt.pred_num_layers: 2
+  asr.rnnt.joint_dim: 640
+  asr.rnnt.max_symbols_per_step: 10
+  asr.rnnt.num_prompts: 0
+  asr.tdt.durations: [0, 1, 2, 3, 4]
+  asr.tokenizer.type: sentencepiece_bpe
+  asr.tokenizer.vocab: array<8>[8192]
+
+Tensor bytes by type (0=F32, 1=F16, 8=Q8_0):
+  0: 42,748,440
+  1: 11,205,376
+  8: 659,854,320
+
+Tensor bytes by component:
+  encoder.layers.feed_forward1: 48 tensors, 213,909,504 bytes
+  encoder.layers.feed_forward2: 48 tensors, 213,909,504 bytes
+  encoder.layers.self_attn: 168 tensors, 133,890,048 bytes
+  encoder.layers.conv: 168 tensors, 81,051,648 bytes
+  encoder.pos_enc: 1 tensors, 40,955,904 bytes
+  decoder: 9 tensors, 17,491,200 bytes
+  joint: 6 tensors, 6,744,072 bytes
+  encoder.pre_encode: 12 tensors, 4,741,632 bytes
+  encoder.layers.norm_feed_forward1: 48 tensors, 196,608 bytes
+  encoder.layers.norm_conv: 48 tensors, 196,608 bytes
+  encoder.layers.norm_self_att: 48 tensors, 196,608 bytes
+  encoder.layers.norm_feed_forward2: 48 tensors, 196,608 bytes
+  encoder.layers.norm_out: 48 tensors, 196,608 bytes
+  preprocessor: 1 tensors, 131,584 bytes
+
+Largest tensor families:
+  encoder.layers.*.feed_forward1.linear1.weight: 24 tensors, 106,954,752 bytes
+  encoder.layers.*.feed_forward1.linear2.weight: 24 tensors, 106,954,752 bytes
+  encoder.layers.*.feed_forward2.linear1.weight: 24 tensors, 106,954,752 bytes
+  encoder.layers.*.feed_forward2.linear2.weight: 24 tensors, 106,954,752 bytes
+  encoder.layers.*.conv.pointwise_conv1.weight: 24 tensors, 53,477,376 bytes
+  encoder.*: 1 tensors, 40,955,904 bytes
+  encoder.layers.*.conv.pointwise_conv2.weight: 24 tensors, 26,738,688 bytes
+  encoder.layers.*.self_attn.linear_q.weight: 24 tensors, 26,738,688 bytes
+  encoder.layers.*.self_attn.linear_k.weight: 24 tensors, 26,738,688 bytes
+  encoder.layers.*.self_attn.linear_v.weight: 24 tensors, 26,738,688 bytes
+  encoder.layers.*.self_attn.linear_out.weight: 24 tensors, 26,738,688 bytes
+  encoder.layers.*.self_attn.linear_pos.weight: 24 tensors, 26,738,688 bytes
+  decoder.*: 9 tensors, 17,491,200 bytes
+  joint.*: 6 tensors, 6,744,072 bytes
+  encoder.pre_encode.*: 12 tensors, 4,741,632 bytes
+  encoder.layers.*.conv.depthwise_conv.weight: 24 tensors, 442,368 bytes
+  preprocessor.*: 1 tensors, 131,584 bytes
+  encoder.layers.*.norm_feed_forward1.weight: 24 tensors, 98,304 bytes
+  encoder.layers.*.norm_feed_forward1.bias: 24 tensors, 98,304 bytes
+  encoder.layers.*.norm_conv.weight: 24 tensors, 98,304 bytes
+  encoder.layers.*.norm_conv.bias: 24 tensors, 98,304 bytes
+  encoder.layers.*.conv.batch_norm.weight: 24 tensors, 98,304 bytes
+  encoder.layers.*.conv.batch_norm.bias: 24 tensors, 98,304 bytes
+  encoder.layers.*.conv.batch_norm.running_mean: 24 tensors, 98,304 bytes
+  encoder.layers.*.conv.batch_norm.running_var: 24 tensors, 98,304 bytes
+  encoder.layers.*.norm_self_att.weight: 24 tensors, 98,304 bytes
+  encoder.layers.*.norm_self_att.bias: 24 tensors, 98,304 bytes
+  encoder.layers.*.self_attn.pos_bias_u: 24 tensors, 98,304 bytes
+  encoder.layers.*.self_attn.pos_bias_v: 24 tensors, 98,304 bytes
+  encoder.layers.*.norm_feed_forward2.weight: 24 tensors, 98,304 bytes
+  encoder.layers.*.norm_feed_forward2.bias: 24 tensors, 98,304 bytes
+  encoder.layers.*.norm_out.weight: 24 tensors, 98,304 bytes
+  encoder.layers.*.norm_out.bias: 24 tensors, 98,304 bytes
+
+Largest individual tensors:
+  encoder.pos_enc.pe: [1024, 9999], type=0, 40,955,904 bytes
+  decoder.prediction.embed.weight: [640, 8193], type=1, 10,487,040 bytes
+  joint.joint_net.2.weight: [640, 8198], type=8, 5,574,640 bytes
+  encoder.pre_encode.out.weight: [4096, 1024], type=8, 4,456,448 bytes
+  encoder.layers.0.feed_forward1.linear1.weight: [1024, 4096], type=8, 4,456,448 bytes
+  encoder.layers.0.feed_forward1.linear2.weight: [4096, 1024], type=8, 4,456,448 bytes
+  encoder.layers.0.feed_forward2.linear1.weight: [1024, 4096], type=8, 4,456,448 bytes
+  encoder.layers.0.feed_forward2.linear2.weight: [4096, 1024], type=8, 4,456,448 bytes
+  encoder.layers.1.feed_forward1.linear1.weight: [1024, 4096], type=8, 4,456,448 bytes
+  encoder.layers.1.feed_forward1.linear2.weight: [4096, 1024], type=8, 4,456,448 bytes
+  encoder.layers.1.feed_forward2.linear1.weight: [1024, 4096], type=8, 4,456,448 bytes
+  encoder.layers.1.feed_forward2.linear2.weight: [4096, 1024], type=8, 4,456,448 bytes
+  encoder.layers.2.feed_forward1.linear1.weight: [1024, 4096], type=8, 4,456,448 bytes
+  encoder.layers.2.feed_forward1.linear2.weight: [4096, 1024], type=8, 4,456,448 bytes
+  encoder.layers.2.feed_forward2.linear1.weight: [1024, 4096], type=8, 4,456,448 bytes
+  encoder.layers.2.feed_forward2.linear2.weight: [4096, 1024], type=8, 4,456,448 bytes
+  encoder.layers.3.feed_forward1.linear1.weight: [1024, 4096], type=8, 4,456,448 bytes
+  encoder.layers.3.feed_forward1.linear2.weight: [4096, 1024], type=8, 4,456,448 bytes
+  encoder.layers.3.feed_forward2.linear1.weight: [1024, 4096], type=8, 4,456,448 bytes
+  encoder.layers.3.feed_forward2.linear2.weight: [4096, 1024], type=8, 4,456,448 bytes
+  encoder.layers.4.feed_forward1.linear1.weight: [1024, 4096], type=8, 4,456,448 bytes
+  encoder.layers.4.feed_forward1.linear2.weight: [4096, 1024], type=8, 4,456,448 bytes
+  encoder.layers.4.feed_forward2.linear1.weight: [1024, 4096], type=8, 4,456,448 bytes
+  encoder.layers.4.feed_forward2.linear2.weight: [4096, 1024], type=8, 4,456,448 bytes
+  encoder.layers.5.feed_forward1.linear1.weight: [1024, 4096], type=8, 4,456,448 bytes
+  encoder.layers.5.feed_forward1.linear2.weight: [4096, 1024], type=8, 4,456,448 bytes
+  encoder.layers.5.feed_forward2.linear1.weight: [1024, 4096], type=8, 4,456,448 bytes
+  encoder.layers.5.feed_forward2.linear2.weight: [4096, 1024], type=8, 4,456,448 bytes
+  encoder.layers.6.feed_forward1.linear1.weight: [1024, 4096], type=8, 4,456,448 bytes
+  encoder.layers.6.feed_forward1.linear2.weight: [4096, 1024], type=8, 4,456,448 bytes
+
+Non-layer tensors and layer 0 example:
+  encoder.pos_enc.pe: [1024, 9999], type=0, 40,955,904 bytes
+  preprocessor.fb: [257, 128], type=0, 131,584 bytes
+  encoder.pre_encode.out.weight: [4096, 1024], type=8, 4,456,448 bytes
+  encoder.pre_encode.out.bias: [1024], type=0, 4,096 bytes
+  encoder.pre_encode.conv.0.weight: [3, 3, 1, 256], type=1, 4,608 bytes
+  encoder.pre_encode.conv.0.bias: [256], type=0, 1,024 bytes
+  encoder.pre_encode.conv.2.weight: [3, 3, 1, 256], type=1, 4,608 bytes
+  encoder.pre_encode.conv.2.bias: [256], type=0, 1,024 bytes
+  encoder.pre_encode.conv.3.weight: [1, 1, 256, 256], type=1, 131,072 bytes
+  encoder.pre_encode.conv.3.bias: [256], type=0, 1,024 bytes
+  encoder.pre_encode.conv.5.weight: [3, 3, 1, 256], type=1, 4,608 bytes
+  encoder.pre_encode.conv.5.bias: [256], type=0, 1,024 bytes
+  encoder.pre_encode.conv.6.weight: [1, 1, 256, 256], type=1, 131,072 bytes
+  encoder.pre_encode.conv.6.bias: [256], type=0, 1,024 bytes
+  encoder.layers.0.norm_feed_forward1.weight: [1024], type=0, 4,096 bytes
+  encoder.layers.0.norm_feed_forward1.bias: [1024], type=0, 4,096 bytes
+  encoder.layers.0.feed_forward1.linear1.weight: [1024, 4096], type=8, 4,456,448 bytes
+  encoder.layers.0.feed_forward1.linear2.weight: [4096, 1024], type=8, 4,456,448 bytes
+  encoder.layers.0.norm_conv.weight: [1024], type=0, 4,096 bytes
+  encoder.layers.0.norm_conv.bias: [1024], type=0, 4,096 bytes
+  encoder.layers.0.conv.pointwise_conv1.weight: [1024, 2048], type=8, 2,228,224 bytes
+  encoder.layers.0.conv.depthwise_conv.weight: [9, 1, 1024], type=1, 18,432 bytes
+  encoder.layers.0.conv.batch_norm.weight: [1024], type=0, 4,096 bytes
+  encoder.layers.0.conv.batch_norm.bias: [1024], type=0, 4,096 bytes
+  encoder.layers.0.conv.batch_norm.running_mean: [1024], type=0, 4,096 bytes
+  encoder.layers.0.conv.batch_norm.running_var: [1024], type=0, 4,096 bytes
+  encoder.layers.0.conv.pointwise_conv2.weight: [1024, 1024], type=8, 1,114,112 bytes
+  encoder.layers.0.norm_self_att.weight: [1024], type=0, 4,096 bytes
+  encoder.layers.0.norm_self_att.bias: [1024], type=0, 4,096 bytes
+  encoder.layers.0.self_attn.pos_bias_u: [128, 8], type=0, 4,096 bytes
+  encoder.layers.0.self_attn.pos_bias_v: [128, 8], type=0, 4,096 bytes
+  encoder.layers.0.self_attn.linear_q.weight: [1024, 1024], type=8, 1,114,112 bytes
+  encoder.layers.0.self_attn.linear_k.weight: [1024, 1024], type=8, 1,114,112 bytes
+  encoder.layers.0.self_attn.linear_v.weight: [1024, 1024], type=8, 1,114,112 bytes
+  encoder.layers.0.self_attn.linear_out.weight: [1024, 1024], type=8, 1,114,112 bytes
+  encoder.layers.0.self_attn.linear_pos.weight: [1024, 1024], type=8, 1,114,112 bytes
+  encoder.layers.0.norm_feed_forward2.weight: [1024], type=0, 4,096 bytes
+  encoder.layers.0.norm_feed_forward2.bias: [1024], type=0, 4,096 bytes
+  encoder.layers.0.feed_forward2.linear1.weight: [1024, 4096], type=8, 4,456,448 bytes
+  encoder.layers.0.feed_forward2.linear2.weight: [4096, 1024], type=8, 4,456,448 bytes
+  encoder.layers.0.norm_out.weight: [1024], type=0, 4,096 bytes
+  encoder.layers.0.norm_out.bias: [1024], type=0, 4,096 bytes
+  decoder.prediction.embed.weight: [640, 8193], type=1, 10,487,040 bytes
+  decoder.prediction.dec_rnn.lstm.ih_l0.weight: [640, 2560], type=8, 1,740,800 bytes
+  decoder.prediction.dec_rnn.lstm.hh_l0.weight: [640, 2560], type=8, 1,740,800 bytes
+  decoder.prediction.dec_rnn.lstm.ih_l0.bias: [2560], type=0, 10,240 bytes
+  decoder.prediction.dec_rnn.lstm.hh_l0.bias: [2560], type=0, 10,240 bytes
+  decoder.prediction.dec_rnn.lstm.ih_l1.weight: [640, 2560], type=8, 1,740,800 bytes
+  decoder.prediction.dec_rnn.lstm.hh_l1.weight: [640, 2560], type=8, 1,740,800 bytes
+  decoder.prediction.dec_rnn.lstm.ih_l1.bias: [2560], type=0, 10,240 bytes
+  decoder.prediction.dec_rnn.lstm.hh_l1.bias: [2560], type=0, 10,240 bytes
+  joint.pred.weight: [640, 640], type=8, 435,200 bytes
+  joint.pred.bias: [640], type=0, 2,560 bytes
+  joint.enc.weight: [1024, 640], type=8, 696,320 bytes
+  joint.enc.bias: [640], type=0, 2,560 bytes
+  joint.joint_net.2.weight: [640, 8198], type=8, 5,574,640 bytes
+  joint.joint_net.2.bias: [8198], type=0, 32,792 bytes

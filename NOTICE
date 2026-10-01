@@ -1,0 +1,12 @@
+Parakeet CUDA
+Copyright 2026 Parakeet CUDA contributors
+
+Portions of the diarization/frontend/reference behavior are derived from
+NVIDIA NeMo-Speech.cpp:
+Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+Licensed under the Apache License, Version 2.0.
+https://github.com/NVIDIA/NeMo-Speech.cpp
+
+This project is an independent runtime and is not an official NVIDIA product.
+Model weights are not distributed with this source or Python package.
+See THIRD_PARTY_NOTICES.md for model and optional validation dependencies.
